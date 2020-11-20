@@ -32,8 +32,6 @@ module.exports = async (controller) => {
   controller.hears( 'temperature', 'message,direct_message', async ( bot, message ) => {
     await bot.beginDialog( 'temperature' );
 });
-
-  
   
 }
 
