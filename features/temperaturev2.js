@@ -4,7 +4,7 @@ const axios = require('axios');
 module.exports = async (controller) => {
 
   const convo = new BotkitConversation( 'temperature', controller );
-  const city;
+  let city = '';
   const config = {
     method: 'get',
     url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6431a1f83b9a1e98ba6ff416cf3045a6&units=metric`,
