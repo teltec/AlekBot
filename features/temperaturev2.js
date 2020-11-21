@@ -13,15 +13,15 @@ module.exports = async (controller) => {
           ${apikey}units=metric`,
         headers: {},
       };
-      await axios(config)
-        .then(function (response) {
+      try {
+        await axios(config).then(function (response) {
           const temperature = parseFloat(response.data.main.temp);
           const text = `A temperatura de hoje em ${city} é de: ${temperature}`;
           convo.say(text);
-        })
-        .catch(function (error) {
-          console.log(error);
         });
+      } catch (error) {
+        console.log(error);
+      }
     }
   );
 
